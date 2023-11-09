@@ -9,7 +9,7 @@ if(file_exists(".env")) {
   $env = file(".env");
   foreach ($env as $p) {
     $explode_p = explode("=", $p);
-    $config[$explode_p[0]] = $explode_p[1];
+    $config[$explode_p[0]] = preg_replace( "/\"|\'|\r|\n/", "", $explode_p[1]);
   }
 }
 
