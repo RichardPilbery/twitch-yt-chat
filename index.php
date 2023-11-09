@@ -25,6 +25,11 @@ $img_url = isset($config['IMG_URL']) ? $config['IMG_URL'] : "LOGO URL";
 
 # LOGGING
 
+# Create log folder if it does not exist
+if (!file_exists('logs')) {
+  mkdir('logs', 0777, true);
+}
+
 $file_name = "logs/".date("Y-m-d").".log";
 if(!file_exists($file_name)) {
   # If log file does not exist, create one
