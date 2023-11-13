@@ -1,5 +1,8 @@
 <?php
 
+# Configure CSP to allow Twitch
+header("Content-Security-Policy: frame-ancestors 'self' https://www.twitch.tv/");
+
 # CONFIGURATION
 
 # For Privacy, all config details such as API keys are stored in the .env file
